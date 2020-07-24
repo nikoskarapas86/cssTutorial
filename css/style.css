@@ -6,6 +6,13 @@ Medium green: #55c57a
 Dark green: #28b485
 
 */
+
+/* position: relative
+ places an element relative to its current position
+ without changing the layout around it,
+  whereas
+  position: absolute places an element relative to its parent’s 
+  position and changing the layout around it. */
 *{
 margin:0px;
 padding:0px;
@@ -16,9 +23,9 @@ body{
     font-family: "Lato",sans-serif;
     font-weight: 400;
     font-size:16px;
-line-height:1.7;
-color:#777;
-padding:30px;
+    line-height:1.7;
+    color:#777;
+    padding:30px;
 }
 
 .header{
@@ -26,5 +33,42 @@ padding:30px;
     background-image: linear-gradient(to right bottom,rgba(126,213,111,0.8),rgba(40,180,131,0.8)), url(../img/hero.jpg);
     background-size:cover;
     background-position:top;
-    clip-path:polygon(0 0 , 100% 0, 100% 75vh, 0 100%)
+    clip-path:polygon(0 0 , 100% 0, 100% 75vh, 0 100%);
+    position:relative;
+}
+
+.logo-box{
+position:absolute;
+top:40px;
+left:40px;
+}
+
+.logo{
+height:35px;
+}
+
+
+.heading-primary{
+color:#fff;
+text-transform :uppercase;
+}
+
+.heading-primary-main{
+    display:block;
+    font-size:60px;
+    font-weight:400;
+    letter-spacing: 35px;;
+}
+.heading-primary-sub{
+    display:block;
+font-size: 20px;
+font-weight:400;
+letter-spacing: 17.4px;
+}
+
+.text-box{
+    position:absolute;
+    top:40%;
+    left:50%;
+    transform:translate(-50%,-50%)
 }
