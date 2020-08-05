@@ -1,0 +1,25 @@
+{
+  "name": "naturus",
+  "version": "1.0.0",
+  "description": "landing page",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nikolaos1986/cssTutorial.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nikolaos1986/cssTutorial/issues"
+  },
+  "homepage": "https://github.com/nikolaos1986/cssTutorial#readme",
+  "dependencies": {
+    "jquery": "^3.5.1"
+  },
+  "devDependencies": {
+    "node-sass": "^4.14.1"
+  }
+}

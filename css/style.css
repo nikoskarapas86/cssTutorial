@@ -13,6 +13,7 @@ Dark green: #28b485
   whereas
   position: absolute places an element relative to its parent’s 
   position and changing the layout around it. */
+  
 *{
 margin:0px;
 padding:0px;
@@ -157,8 +158,8 @@ position:relative;
     position: absolute;
     top:0;
     left:0;
-    z-index: -1;
-    transition:all .4s;
+    z-index: -1; 
+     transition:all .4s;
 }
 
 .btn-white{
