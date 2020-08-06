@@ -1,3 +1,5 @@
+@import "base/base";
+
 /*
 COLORS:
 
@@ -13,11 +15,7 @@ Dark green: #28b485
   whereas
   position: absolute places an element relative to its parent’s 
   position and changing the layout around it. */
-$color-primary:#55c57a;
-$color-primary-light:#7ed56f;
-$color-primary-dark:#28b485;
-$color-gray-dark : #777;
-$color-white: #fff;
+
   *,
   *::after,
   *::before {
@@ -52,52 +50,60 @@ $color-white: #fff;
     background-position: top;
     clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
     position: relative;
+
+    &_logo-box {
+      position: absolute;
+      top: 4rem;
+      left: 4rem;
+    }
+    &_logo {
+      height: 3.5rem;
+    }
+
+     &_text-box {
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+    
+
   }
   
-  .header_logo-box {
-    position: absolute;
-    top: 4rem;
-    left: 4rem;
-  }
   
-  .header_logo {
-    height: 3.5rem;
-  }
+  
+ 
   
   .heading-primary {
     color: $color-white;
     text-transform: uppercase;
     backface-visibility: hidden;
     margin-bottom: 6rem;
+
+    &-primary-main {
+      display: block;
+      font-size: 6rem;
+      font-weight: 400;
+      letter-spacing: 3.5rem;
+      animation-name: moveInLeft;
+      animation-duration: 1s;
+      animation-timing-function: ease-out;
+      /* animation-iteration-count: 3; */
+      /* animation-delay: 3s; */
+    }
+    &-primary-sub {
+      display: block;
+      font-size: 2rem;
+      font-weight: 400;
+      letter-spacing: 1.75rem;
+      animation: moveInRight 1s ease-out;
+    }
+    
   }
   
-  .heading-primary-main {
-    display: block;
-    font-size: 6rem;
-    font-weight: 400;
-    letter-spacing: 3.5rem;
-    animation-name: moveInLeft;
-    animation-duration: 1s;
-    animation-timing-function: ease-out;
-    /* animation-iteration-count: 3; */
-    /* animation-delay: 3s; */
-  }
-  .heading-primary-sub {
-    display: block;
-    font-size: 2rem;
-    font-weight: 400;
-    letter-spacing: 1.75rem;
-    animation: moveInRight 1s ease-out;
-  }
   
-  .header_text-box {
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-  }
-  
+
   @keyframes moveInLeft {
     0% {
       opacity: 0;
@@ -142,8 +148,9 @@ $color-white: #fff;
     }
   }
   
-  .btn:link,
-  .btn:visited {
+.btn{
+  &:link,
+  &:visited {
     text-transform: uppercase;
     text-decoration: none;
     border-radius: 10rem;
@@ -152,17 +159,21 @@ $color-white: #fff;
     font-size:1.6rem;
   }
   
-  .btn:hover {
+  &:hover {
     transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 10px 20px rgba($color-black, 0.2);
+    &:after {
+      transform: scaleX(1.4) scaleY(1.6);
+      opacity: 0;
+    }
   }
   
-  .btn:active {
+  &:active {
     transform: translateY(-1px);
-    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.2);
+    box-shadow: 0 .5rem 1rem rgba($color-black, 0.2);
   }
   
-  .btn:after {
+  &:after {
     content: "";
     display: inline-block;
     height: 100%;
@@ -175,24 +186,25 @@ $color-white: #fff;
     transition: all 0.4s;
   }
   
-  .btn-white {
+  &-white {
     background-color: $color-white;
     color: $color-gray-dark;
     padding: 1.5rem 4rem;
     display: inline-block;
+    &:after {
+      background-color: $color-white;
+    }
   }
   
-  .btn-white:after {
-    background-color: $color-white;
-  }
   
-  .btn:hover:after {
-    transform: scaleX(1.4) scaleY(1.6);
-    opacity: 0;
-  }
   
-  .btn-animated {
+ 
+  
+  &-animated {
     animation: moveInBottom 0.5s ease-out 0.75s;
     animation-fill-mode: backwards;
   }
+}
+
+ 
   
