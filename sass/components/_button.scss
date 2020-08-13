@@ -2,6 +2,7 @@
 @import "../base/animation";
 
 .btn {
+  &,
   &:link,
   &:visited {
     text-transform: uppercase;
@@ -10,9 +11,13 @@
     transition: all 0.2s;
     position: relative;
     font-size: $default-font-size;
+    //change for buttons
+
+    border:none;
+    cursor:pointer;
   }
 
-  &:hover {
+  &:hover{
     transform: translateY(-3px);
     box-shadow: 0 10px 20px rgba($color-black, 0.2);
     &:after {
@@ -21,7 +26,8 @@
     }
   }
 
-  &:active {
+  &:active,&:focus {
+    outline: none;
     transform: translateY(-1px);
     box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
   }
