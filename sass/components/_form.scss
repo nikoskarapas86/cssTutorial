@@ -1,3 +1,5 @@
+@import "../abstracts/mixins";
+
 .form {
   &__group:not(:last-child) {
     margin-bottom: 2rem;
@@ -14,6 +16,9 @@
     width: 90%;
     display: block;
     transition: all 0.3s;
+    @include respond(tab-port) {
+      width: 100%;
+    }
 
     &::-webkit-input-placeholder {
       color: $color-gray-dark-2;
@@ -45,6 +50,11 @@
   &__radio-group {
     width: 49%;
     display: inline-block;
+
+    @include respond(tab-port) {
+      width: 100%;
+      margin-bottom: 2rem;
+    }
   }
   &__radio-label {
     font-size: $default-font-size;
@@ -53,9 +63,9 @@
     padding-left: 4.5rem;
   }
 
- &__radio-input {
-   display: none;
- }
+  &__radio-input {
+    display: none;
+  }
 
   &__radio-button {
     height: 3rem;
@@ -77,7 +87,7 @@
       transform: translate(-50%, -50%);
       background-color: $color-primary;
       opacity: 0;
-      transform: opacity .2s;
+      transform: opacity 0.2s;
     }
   }
   &__radio-input:checked ~ &__radio-label &__radio-button::after {
